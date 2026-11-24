@@ -1,0 +1,11 @@
+//- Міксин кнопки/посилання: підтримує block (для іконок) та &attributes
+mixin btn(text, href = null, variant = 'primary', extraClass = '')
+  - const btnClasses = ['btn', `btn--${variant}`, extraClass]
+  if href
+    a(class=btnClasses href=href)&attributes(attributes)
+      block
+      span= text
+  else
+    button(class=btnClasses type=attributes.type || 'button')&attributes(attributes)
+      block
+      span= text

@@ -1,0 +1,11 @@
+section#about.section.container.services
+  h2.section__title WHAT DO WE DO
+  p.section__subtitle We are a small team of designers and makers who help brands look their best online and offline.
+
+  .services__grid
+    each service in servicesList
+      article.services__card
+        .services__icon-wrap
+          +icon(service.icon, 32, 32)
+        h3.services__title= service.title
+        p.services__desc= service.desc

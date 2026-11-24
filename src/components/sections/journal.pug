@@ -1,0 +1,20 @@
+section#journal.section.container.journal
+  h2.section__title FROM THE JOURNAL
+  p.section__subtitle Notes on process, case studies and things that inspire us.
+
+  .journal__grid
+    each post in journalPosts
+      article.journal__card
+        .journal__thumb(class=`journal__thumb--${post.bg}`)
+          +picture(
+            post.image,
+            post.alt,
+            400,
+            400,
+            '(min-width: 768px) 150px, 100vw'
+          )(class="journal__img")
+        .journal__content
+          span.journal__meta #{post.date} / #{post.category}
+          h3.journal__title= post.title
+          p.journal__excerpt= post.excerpt
+          a.journal__read-more(href="#") READ MORE &rsaquo;

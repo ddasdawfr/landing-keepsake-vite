@@ -1,0 +1,15 @@
+//- Міксин картки портфоліо
+mixin work-card(work)
+  article.work-card(class=[`work-card--${work.category}`, `work-card--${work.bg}`] tabindex="0")
+    .work-card__media
+      +picture(
+        work.image,
+        work.alt,
+        800,
+        632,
+        '(min-width: 1280px) 357px, (min-width: 768px) 50vw, 100vw'
+      )(class="work-card__img")
+    .work-card__overlay
+      span.work-card__plus +
+      h3.work-card__title= work.title
+      span.work-card__category= work.categoryLabel

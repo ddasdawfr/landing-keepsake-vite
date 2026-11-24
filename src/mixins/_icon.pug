@@ -1,0 +1,18 @@
+//- Міксин виводу SVG-іконки через case / when
+mixin icon(name, width = 18, height = 18)
+  svg(width=width height=height aria-hidden="true")&attributes(attributes)
+    case name
+      when 'heart'
+        use(href="#icon-heart")
+      when 'mail'
+        use(href="#icon-mail")
+      when 'webdesign'
+        use(href="#icon-webdesign")
+      when 'movie'
+        use(href="#icon-movie")
+      when 'print'
+        use(href="#icon-print")
+      when 'illustration'
+        use(href="#icon-illustration")
+      default
+        use(href=`#icon-${name}`)

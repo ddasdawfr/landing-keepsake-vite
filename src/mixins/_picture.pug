@@ -1,0 +1,31 @@
+//- Міксин адаптивного зображення AVIF + WebP + JPEG fallback
+mixin picture(name, alt, width, height, sizes = '100vw', eager = false)
+  picture
+    source(
+      type="image/avif"
+      srcset=`/src/assets/images/${name}-400.avif 400w, /src/assets/images/${name}-800.avif 800w`
+      sizes=sizes
+    )
+    source(
+      type="image/webp"
+      srcset=`/src/assets/images/${name}-400.webp 400w, /src/assets/images/${name}-800.webp 800w`
+      sizes=sizes
+    )
+    if eager
+      img(
+        src=`/src/assets/images/${name}-800.jpg`
+        alt=alt
+        width=width
+        height=height
+        decoding="async"
+        fetchpriority="high"
+      )&attributes(attributes)
+    else
+      img(
+        src=`/src/assets/images/${name}-800.jpg`
+        alt=alt
+        width=width
+        height=height
+        loading="lazy"
+        decoding="async"
+      )&attributes(attributes)

@@ -1,0 +1,26 @@
+section#works.section.container.works
+  h2.section__title OUR AWESOME WORKS
+
+  //- Радіокнопки фільтра генеруються циклом з масиву категорій
+  each cat, i in filterCategories
+    input.works__radio.visually-hidden(
+      type="radio"
+      name="filter"
+      id=`filter-${cat.id}`
+      class=`works__radio--${cat.id}`
+      checked=i === 0
+    )
+
+  .works__chips
+    each cat in filterCategories
+      label.works__chip(
+        for=`filter-${cat.id}`
+        class=`works__chip--${cat.id}`
+      )= cat.label
+
+  .works__grid
+    each work in worksList
+      +work-card(work)
+
+  .works__more
+    +btn('LOAD MORE WORKS', null, 'secondary', 'btn--full-mobile')

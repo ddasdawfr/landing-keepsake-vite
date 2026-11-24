@@ -1,0 +1,38 @@
+extends ../layouts/main.pug
+
+append meta
+  meta(name="description" content="Keepsake — Digital & Branding Agency based in London. Specializing in web design, poster, motion video.")
+  meta(property="og:title" content="Keepsake — Digital & Branding Agency")
+  meta(property="og:type" content="website")
+
+append styles
+  link(rel="preload" href="/src/assets/fonts/oswald-v57-latin-regular.woff2" as="font" type="font/woff2" crossorigin)
+
+block title
+  title Keepsake — Digital & Branding Agency
+
+block content
+  //- Підключення даних усіх секцій
+  include ../data/navigation.pug
+  include ../data/works.pug
+  include ../data/services.pug
+  include ../data/clients.pug
+  include ../data/journal.pug
+  include ../data/footer.pug
+
+  //- Шапка та мобільне меню
+  include ../components/header.pug
+
+  //- Основний вміст сторінки
+  main
+    include ../components/sections/hero.pug
+    include ../components/sections/works.pug
+    include ../components/sections/cta.pug
+    include ../components/sections/services.pug
+    include ../components/sections/stats.pug
+    include ../components/sections/clients.pug
+    include ../components/sections/journal.pug
+
+  //- Футер та кнопка вгору
+  include ../components/footer.pug
+  a.back-to-top(href="#" aria-label="Back to top") &uarr;
