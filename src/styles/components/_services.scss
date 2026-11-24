@@ -1,0 +1,52 @@
+@use '../abstracts' as *;
+
+.services {
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(24);
+    margin-top: rem(32);
+  }
+
+  &__card {
+    flex: 1 1 calc(50% - #{rem(12)});
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    @include mq(lg) {
+      flex: 1 1 calc(25% - #{rem(18)});
+    }
+  }
+
+  &__icon-wrap {
+    @include flex-center;
+
+    width: rem(72);
+    height: rem(72);
+    border-radius: 50%;
+    background-color: var(--color-bg-light);
+    color: var(--color-text-dark);
+    margin-bottom: rem(16);
+
+    @include mq(lg) {
+      width: rem(96);
+      height: rem(96);
+    }
+  }
+
+  &__title {
+    font-family: var(--font-heading);
+    font-size: rem(13);
+    letter-spacing: 1px;
+    color: var(--color-text-dark);
+    margin-bottom: rem(8);
+  }
+
+  &__desc {
+    font-size: rem(13);
+    line-height: rem(20);
+    color: var(--color-text);
+  }
+}

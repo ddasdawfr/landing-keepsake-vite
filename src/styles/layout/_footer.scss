@@ -1,0 +1,152 @@
+@use '../abstracts' as *;
+
+.footer {
+  background-color: var(--color-footer);
+  color: var(--color-white);
+  padding-top: rem(48);
+  padding-bottom: rem(32);
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    gap: rem(32);
+    padding-bottom: rem(32);
+    border-bottom: 1px solid rgb(255 255 255 / 10%);
+
+    @include mq(md) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__col-title {
+    font-family: var(--font-heading);
+    font-size: rem(13);
+    letter-spacing: 1px;
+    margin-bottom: rem(12);
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__link {
+    color: var(--color-muted);
+    text-decoration: none;
+    line-height: rem(24);
+    font-size: rem(13);
+
+    &:hover {
+      color: var(--color-white);
+    }
+  }
+
+  &__newsletter-desc {
+    font-size: rem(13);
+    color: var(--color-muted);
+    margin-bottom: rem(12);
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: rem(12);
+  }
+
+  &__input-group {
+    display: flex;
+    flex-direction: column;
+    gap: rem(8);
+
+    @include mq(lg) {
+      flex-direction: row;
+      gap: 0;
+    }
+  }
+
+  &__input {
+    padding: rem(12);
+    background-color: rgb(255 255 255 / 5%);
+    border: 1px solid rgb(255 255 255 / 20%);
+    color: var(--color-white);
+    font-size: rem(13);
+
+    @include mq(lg) {
+      flex: 1;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: var(--color-teal);
+    }
+
+    &:invalid:not(:placeholder-shown) {
+      border-color: var(--color-accent);
+    }
+  }
+
+  &__checkbox {
+    display: flex;
+    align-items: center;
+    gap: rem(8);
+    font-size: rem(12);
+    color: var(--color-muted);
+    cursor: pointer;
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem(16);
+    padding-top: rem(24);
+
+    @include mq(md) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__copyright {
+    font-size: rem(12);
+    color: var(--color-muted);
+  }
+}
+
+.social-icons {
+  display: flex;
+  gap: rem(8);
+  margin-top: rem(16);
+
+  &__link {
+    @include flex-center;
+
+    width: rem(30);
+    height: rem(30);
+    border-radius: 50%;
+    background-color: var(--color-text-dark);
+    color: var(--color-white);
+    font-size: rem(11);
+    text-decoration: none;
+
+    &--rss {
+      background-color: #f26522;
+    }
+
+    &--fb {
+      background-color: #3b5998;
+    }
+
+    &--tw {
+      background-color: #1da1f2;
+    }
+
+    &--dr {
+      background-color: #ea4c89;
+    }
+
+    &--p {
+      background-color: #bd081c;
+    }
+  }
+}

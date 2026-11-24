@@ -1,0 +1,81 @@
+@use '../abstracts' as *;
+
+.works {
+  &__chips {
+    display: flex;
+    gap: rem(8);
+    margin-top: rem(20);
+    margin-bottom: rem(24);
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: rem(8);
+  }
+
+  &__chip {
+    font-family: var(--font-heading);
+    font-size: rem(12);
+    text-transform: uppercase;
+    padding: rem(6) rem(16);
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+    }
+  }
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(12);
+
+    @include mq(lg) {
+      gap: rem(14);
+    }
+  }
+
+  &__more {
+    margin-top: rem(24);
+    text-align: center;
+  }
+
+  &__radio--all:checked ~ &__chips &__chip--all,
+  &__radio--branding:checked ~ &__chips &__chip--branding,
+  &__radio--identity:checked ~ &__chips &__chip--identity,
+  &__radio--print:checked ~ &__chips &__chip--print,
+  &__radio--web:checked ~ &__chips &__chip--web,
+  &__radio--motion:checked ~ &__chips &__chip--motion {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    border-color: var(--color-accent);
+  }
+
+  &__radio--branding:checked ~ &__grid .work-card:not(.work-card--branding),
+  &__radio--identity:checked ~ &__grid .work-card:not(.work-card--identity),
+  &__radio--print:checked ~ &__grid .work-card:not(.work-card--print),
+  &__radio--web:checked ~ &__grid .work-card:not(.work-card--web),
+  &__radio--motion:checked ~ &__grid .work-card:not(.work-card--motion) {
+    display: none;
+  }
+
+  &__radio--all:checked ~ &__grid .work-card:nth-child(n + 6) {
+    display: none;
+
+    @include mq(md) {
+      display: block;
+    }
+  }
+
+  &__radio--all:checked ~ &__grid .work-card:nth-child(n + 9) {
+    @include mq(md) {
+      display: none;
+    }
+
+    @include mq(lg) {
+      display: block;
+    }
+  }
+}

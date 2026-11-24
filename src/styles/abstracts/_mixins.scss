@@ -1,0 +1,32 @@
+@use 'sass:map';
+@use 'variables' as *;
+
+@mixin mq($bp) {
+  @media (min-width: map.get($breakpoints, $bp)) {
+    @content;
+  }
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+@mixin flex-center($direction: row, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: center;
+  gap: $gap;
+}
+
+@mixin focus-ring($color: var(--color-accent), $offset: 2px) {
+  outline: 2px solid $color;
+  outline-offset: $offset;
+}

@@ -1,0 +1,18 @@
+@use '../abstracts' as *;
+
+.back-to-top {
+  @include flex-center;
+
+  position: fixed;
+  bottom: rem(20);
+  right: rem(20);
+  width: rem(44);
+  height: rem(44);
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  text-decoration: none;
+  font-size: rem(20);
+  z-index: 90;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 20%);
+}

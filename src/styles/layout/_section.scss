@@ -1,0 +1,43 @@
+@use '../abstracts' as *;
+
+.section {
+  padding-block: rem(56);
+
+  @include mq(md) {
+    padding-block: rem(72);
+  }
+
+  @include mq(lg) {
+    padding-block: rem(90);
+  }
+
+  &__title {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-size: rem(18);
+    color: var(--color-text-dark);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: flex;
+    align-items: center;
+    gap: rem(12);
+
+    &::after {
+      content: '';
+      display: inline-block;
+      width: rem(16);
+      height: rem(2);
+      background-color: var(--color-accent);
+    }
+
+    &--light {
+      color: var(--color-bg-light);
+    }
+  }
+
+  &__subtitle {
+    margin-top: rem(8);
+    color: var(--color-text);
+    font-size: rem(14);
+  }
+}
