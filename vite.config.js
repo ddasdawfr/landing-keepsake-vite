@@ -14,6 +14,15 @@ export default {
       },
     }),
     pug({ root: './src' }),
+    {
+      name: 'rename-pug-html',
+      enforce: 'post',
+      generateBundle(_, bundle) {
+        if (bundle['index.pug.html']) {
+          bundle['index.pug.html'].fileName = 'index.html';
+        }
+      },
+    },
   ],
   resolve: {
     alias: {
