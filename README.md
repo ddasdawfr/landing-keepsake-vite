@@ -2,7 +2,7 @@
 
 Адаптивний лендінг креативної агенції **Keepsake**, реалізований за принципом **Mobile-First** із використанням сучасного стеку автоматизації фронтенд-розробки.
 
-- **Публічне посилання (GitHub Pages):** https://<ddasdawfr>.github.io/landing-keepsake-vite/
+- **Публічне посилання (GitHub Pages):** https://ddasdawfr.github.io/landing-keepsake-vite/
 
 ## Стек технологій
 
