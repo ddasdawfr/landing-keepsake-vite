@@ -6,15 +6,9 @@ section#journal.section.container.journal
     each post in journalPosts
       article.journal__card
         .journal__thumb(class=`journal__thumb--${post.bg}`)
-          +picture(
-            post.image,
-            post.alt,
-            400,
-            400,
-            '(min-width: 768px) 150px, 100vw'
-          )(class="journal__img")
+          +picture(post.image, post.alt, 400, 400, '(min-width: 768px) 150px, 100vw').journal__img
         .journal__content
-          span.journal__meta #{post.date} / #{post.category}
+          span.journal__meta #{ post.date } / #{ post.category }
           h3.journal__title= post.title
           p.journal__excerpt= post.excerpt
-          a.journal__read-more(href="#") READ MORE &rsaquo;
+          a.journal__read-more(href='#') READ MORE &rsaquo;

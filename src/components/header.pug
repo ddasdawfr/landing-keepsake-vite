@@ -1,43 +1,37 @@
 //- Прихований чекбокс для мобільного меню без JS
-input#burger-toggle.burger-toggle.visually-hidden(type="checkbox")
+input#burger-toggle.burger-toggle.visually-hidden(type='checkbox')
 
 header.header
   .container.header__container
-    a.logo(href="#")
+    a.logo(href='#')
       span.logo__circle K
       | eepsake
 
-    label.header__burger(for="burger-toggle" aria-label="Toggle navigation menu")
+    label.header__burger(for='burger-toggle', aria-label='Toggle navigation menu')
       span.header__burger-line
       span.header__burger-line
       span.header__burger-line
 
-    nav.header__nav(aria-label="Primary navigation")
+    nav.header__nav(aria-label='Primary navigation')
       ul.header__nav-list
         each item in navItems
           li
-            a.header__nav-link(
-              href=item.href
-              class={'header__nav-link--active': item.active}
-            )= item.label
-      button.header__fav-btn(type="button" aria-label="Favourites")
+            a.header__nav-link(href=item.href, class={ 'header__nav-link--active': item.active })= item.label
+      button.header__fav-btn(type='button', aria-label='Favourites')
         +icon('heart', 16, 16)
 
 //- Випадаюча мобільна шторка
 .mobile-drawer
   .mobile-drawer__header
-    a.logo(href="#")
+    a.logo(href='#')
       span.logo__circle K
       | eepsake
-    label.mobile-drawer__close(for="burger-toggle" aria-label="Close menu") &times;
+    label.mobile-drawer__close(for='burger-toggle', aria-label='Close menu') &times;
 
   ul.mobile-drawer__nav
     each item in navItems
       li
-        a.mobile-drawer__link(
-          href=item.href
-          class={'mobile-drawer__link--active': item.active}
-        )
+        a.mobile-drawer__link(href=item.href, class={ 'mobile-drawer__link--active': item.active })
           span= item.label
           span &rsaquo;
 
@@ -50,13 +44,13 @@ header.header
   .mobile-drawer__footer
     p.mobile-drawer__label SAY HELLO
     p.mobile-drawer__contact
-      a(href="mailto:hello@keepsake.studio") hello@keepsake.studio
+      a(href='mailto:hello@keepsake.studio') hello@keepsake.studio
     p.mobile-drawer__contact
-      a(href="tel:+442079460000") +44 20 7946 0000
+      a(href='tel:+442079460000') +44 20 7946 0000
     .social-icons
       each social in socialLinks
         a.social-icons__link(
-          href=social.href
-          class=`social-icons__link--${social.id}`
+          href=social.href,
+          class=`social-icons__link--${social.id}`,
           aria-label=social.aria
         )= social.label

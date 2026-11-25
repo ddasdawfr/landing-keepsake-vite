@@ -11,10 +11,10 @@ section.section.container.clients
     p.clients__text= testimonialData.text
     .clients__author
       .clients__avatar
-        +picture(testimonialData.avatar, testimonialData.author, 72, 72, '36px')(class="clients__avatar-img")
+        +picture(testimonialData.avatar, testimonialData.author, 72, 72, '36px').clients__avatar-img
       .clients__author-info
         strong.clients__author-name= testimonialData.author
         span.clients__author-role= testimonialData.role
       .clients__dots
         each dot, idx in [0, 1, 2]
-          span.clients__dot(class={'clients__dot--active': idx === 0})
+          span.clients__dot(class={ 'clients__dot--active': idx === 0 })

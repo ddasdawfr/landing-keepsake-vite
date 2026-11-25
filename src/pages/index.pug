@@ -1,12 +1,21 @@
 extends ../layouts/main.pug
 
-append meta
-  meta(name="description" content="Keepsake — Digital & Branding Agency based in London. Specializing in web design, poster, motion video.")
-  meta(property="og:title" content="Keepsake — Digital & Branding Agency")
-  meta(property="og:type" content="website")
+block append meta
+  meta(
+    name='description',
+    content='Keepsake — Digital & Branding Agency based in London. Specializing in web design, poster, motion video.'
+  )
+  meta(property='og:title', content='Keepsake — Digital & Branding Agency')
+  meta(property='og:type', content='website')
 
-append styles
-  link(rel="preload" href="/src/assets/fonts/oswald-v57-latin-regular.woff2" as="font" type="font/woff2" crossorigin)
+block append styles
+  link(
+    rel='preload',
+    href='/src/assets/fonts/oswald-v57-latin-regular.woff2',
+    as='font',
+    type='font/woff2',
+    crossorigin
+  )
 
 block title
   title Keepsake — Digital & Branding Agency
@@ -35,4 +44,4 @@ block content
 
   //- Футер та кнопка вгору
   include ../components/footer.pug
-  a.back-to-top(href="#" aria-label="Back to top") &uarr;
+  a.back-to-top(href='#', aria-label='Back to top') &uarr;

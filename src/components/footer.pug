@@ -11,13 +11,17 @@ footer#contact.footer
     .footer__newsletter
       h3.footer__col-title NEWSLETTER
       p.footer__newsletter-desc Fresh case studies and design notes, once a month.
-      form.footer__form(action="#" method="POST")
+      form.footer__form(action='#', method='POST')
         .footer__input-group
-          label.visually-hidden(for="newsletter-email") Your email address
-          input#newsletter-email.footer__input(type="email" placeholder="Your email address" required)
-          +btn('SUBSCRIBE', null, 'primary')(type="submit")
+          label.visually-hidden(for='newsletter-email') Your email address
+          input#newsletter-email.footer__input(
+            type='email',
+            placeholder='Your email address',
+            required
+          )
+          +btn('SUBSCRIBE', null, 'primary')(type='submit')
         label.footer__checkbox
-          input(type="checkbox" required)
+          input(type='checkbox', required)
           span I agree to the privacy policy
 
   .container.footer__bottom
@@ -25,7 +29,7 @@ footer#contact.footer
     .social-icons
       each social in socialLinks
         a.social-icons__link(
-          href=social.href
-          class=`social-icons__link--${social.id}`
+          href=social.href,
+          class=`social-icons__link--${social.id}`,
           aria-label=social.aria
         )= social.label

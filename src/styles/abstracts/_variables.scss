@@ -8,18 +8,14 @@ $colors: (
   'bg-light': #f0f3f4,
   'border': #e1e5e8,
   'footer': #2a2a2d,
-  'white': #ffffff
+  'white': #fff,
 );
-
 $color-overlay: rgb(30 32 36 / 82%);
-
 $font-heading: 'Oswald', sans-serif;
 $font-body: 'Open Sans', sans-serif;
 $font-logo: 'Dancing Script', cursive;
-
 $container-max-width: 1100px;
-
 $breakpoints: (
   'md': 768px,
-  'lg': 1280px
+  'lg': 1280px,
 );
